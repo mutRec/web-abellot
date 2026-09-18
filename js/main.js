@@ -18,7 +18,7 @@
       description: 'ABELLOT.net dissenya pàgines web estàtiques: ràpides, clares i sense complicacions. Tot el que necessites, res que sobri.',
       cta: 'Parlem-ne',
       footer_desc: 'Disseny web estàtic, senzill i ràpid',
-      marquee: 'Webs ràpides • Sense CMS • Codi net • Accessibles • Fet a mà • ABELLOT.net • Webs estàtiques • Senzilles • Dolces • ABELLOT.net • '
+      marquee: 'Webs ràpides • Sense CMS • Codi net • Accessibles • Fetes a mà • ABELLOT.net • Webs estàtiques • Senzilles • Netes • ABELLOT.net • '
     },
     es: {
       tagline: 'Estudio web pequeño, resultados grandes',
@@ -28,7 +28,7 @@
       description: 'ABELLOT.net diseña páginas web estáticas: rápidas, claras y sin complicaciones. Todo lo que necesitas, nada que sobre.',
       cta: 'Hablemos',
       footer_desc: 'Diseño web estático, sencillo y rápido',
-      marquee: 'Webs rápidas • Sin CMS • Código limpio • Accesibles • Hecho a mano • ABELLOT.net • Webs estáticas • Sencillas • Dulces • ABELLOT.net • '
+      marquee: 'Webs rápidas • Sin CMS • Código limpio • Accesibles • Hecho a mano • ABELLOT.net • Webs estáticas • Sencillas • Limpias • ABELLOT.net • '
     },
     en: {
       tagline: 'Small web studio, big results',
