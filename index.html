@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABELLOT.net — Empresa petita de disseny web estàtic, senzill i ràpid. Pàgines web modernes per a negocis amb personalitat.">
+  <meta name="theme-color" content="#141210">
+  <title>ABELLOT.net — Disseny web senzill, resultats dolços</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { honey: '#E8A87C', cream: '#FDF3E7', orange: '#FF6B1A', yellow: '#FFC93C', ink: '#141210' },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 py-2">
+    <div class="max-w-7xl mx-auto flex items-center justify-end">
+      <nav class="flex items-center gap-1.5" aria-label="Selecció d'idioma" role="navigation">
+        <button class="lang-btn active px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.15em] rounded-full bg-ink text-cream transition-all" data-lang="ca" aria-pressed="true">CAT</button>
+        <button class="lang-btn px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.15em] rounded-full bg-cream/80 text-ink border border-ink/20 hover:bg-ink/10 transition-all" data-lang="es" aria-pressed="false">ESP</button>
+        <button class="lang-btn px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.15em] rounded-full bg-cream/80 text-ink border border-ink/20 hover:bg-ink/10 transition-all" data-lang="en" aria-pressed="false">ENG</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative flex flex-col pt-12" id="main-content">
+    <section id="inici" class="relative flex-1 flex items-center overflow-hidden min-h-0">
+      <div class="absolute inset-0" aria-hidden="true">
+        <div class="blob blob-1 parallax" data-speed="0.15"></div>
+        <div class="blob blob-2 parallax" data-speed="0.25"></div>
+        <div class="grid-bg"></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-6 lg:px-10 pt-12 pb-8 w-full">
+        <div class="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8 lg:gap-12">
+          <div class="flex-1 lg:max-w-none text-center lg:text-left min-w-0">
+            <p class="reveal inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange border border-orange/40 rounded-full px-4 py-2 bg-cream/60 backdrop-blur mx-auto lg:mx-0" data-i18n="tagline">
+              <span class="w-2 h-2 rounded-full bg-orange animate-pulse"></span> Estudi web petit, resultats grans
+            </p>
+<h1 class="reveal font-display font-bold leading-[0.95] tracking-tight mt-6 text-4xl sm:text-6xl lg:text-7xl whitespace-nowrap">
+              <span data-i18n="h1-line1">Webs estàtiques.</span><br>
+              <span class="text-outline" data-i18n="h1-line2">Senzilles.</span>
+              <span class="text-orange" data-i18n="h1-line3">Ràpides.</span>
+            </h1>
+            <p class="reveal mt-6 max-w-xl text-base sm:text-lg text-ink/70 leading-relaxed mx-auto lg:mx-0" data-i18n="description">
+              ABELLOT.net dissenya pàgines web estàtiques: ràpides, clares i sense complicacions. Tot el que necessites, res que sobri.
+            </p>
+            <div class="reveal mt-8 flex flex-wrap gap-4 items-center justify-center lg:justify-start">
+              <a href="https://wa.me/34676175847?text=Hola%20ABELLOT.net%2C%20vull%20informaci%C3%B3%20sobre%20els%20vostres%20serveis%20de%20disseny%20web." target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="cta">Parlem-ne <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+<div class="reveal relative w-full lg:w-72 lg:w-96 flex-shrink-0" aria-hidden="true">
+            <img src="images/abellot.jpg" alt="Abellot - ABELLOT.net" class="bee-image-standalone">
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee bg-yellow text-ink overflow-hidden py-3 border-y-2 border-ink" aria-hidden="true" role="status" aria-live="polite">
+      <div class="marquee-track font-display font-semibold text-lg uppercase tracking-widest whitespace-nowrap">
+        <span>Webs ràpides • Sense CMS • Codi net • Accessibles • Fet a mà • ABELLOT.net • Webs estàtiques • Senzilles • Disseny a mida • ABELLOT.net • </span>
+        <span>Webs ràpides • Sense CMS • Codi net • Accessibles • Fet a mà • ABELLOT.net • Webs estàtiques • Senzilles • Disseny a mida • ABELLOT.net • </span>
+      </div>
+    </div>
+
+    <footer id="contacte" class="bg-ink text-cream/60 py-6 lg:py-8 flex-shrink-0">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 text-base">
+          <div class="text-center sm:text-left">
+            <p class="font-display font-bold text-cream text-xl sm:text-2xl">ABELLOT<span class="text-orange">.net</span></p>
+            <p class="mt-1 text-cream/70 text-sm sm:text-base" data-i18n="footer-desc">Disseny web estàtic, senzill i ràpid</p>
+          </div>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-cream/80">
+            <a href="tel:+34676175847" class="flex items-center gap-2 hover:text-yellow transition-colors whitespace-nowrap px-3 py-2 rounded-full bg-cream/5 border border-cream/10 hover:bg-cream/10">
+              <span aria-hidden="true">✆</span>
+              <span>676 175 847</span>
+            </a>
+            <a href="mailto:info@abellot.net" class="flex items-center gap-2 hover:text-yellow transition-colors whitespace-nowrap px-3 py-2 rounded-full bg-cream/5 border border-cream/10 hover:bg-cream/10">
+              <span aria-hidden="true">@</span>
+              <span>info@abellot.net</span>
+            </a>
+            <a href="https://wa.me/34676175847?text=Hola%20ABELLOT.net%2C%20vull%20informaci%C3%B3%20sobre%20els%20vostres%20serveis%20de%20disseny%20web." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-yellow transition-colors whitespace-nowrap px-3 py-2 rounded-full bg-cream/5 border border-cream/10 hover:bg-cream/10">
+              <span aria-hidden="true">❯</span>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+          <p class="text-cream/40 text-sm">© <span id="year">2026</span> ABELLOT.net</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
