@@ -18,12 +18,7 @@
       h1_line3: 'Ràpides.',
       description: 'ABELLOT.net dissenya pàgines web estàtiques: ràpides, clares i sense complicacions. Tot el que necessites, res que sobri.',
       cta: 'Parlem-ne',
-<<<<<<< HEAD
-      footer_desc: 'Disseny web estàtic, senzill i ràpid',
-      marquee: 'Webs ràpides • Sense CMS • Codi net • Accessibles • Fetes a mà • ABELLOT.net • Webs estàtiques • Senzilles • Netes • ABELLOT.net • '
-=======
       footer_desc: 'Disseny web estàtic, senzill i ràpid'
->>>>>>> 518a8f1 (eliminar marquesina, posar efecte groc i afegir memoria projecte)
     },
     es: {
       tagline: 'Estudio web pequeño, resultados grandes',
@@ -32,12 +27,7 @@
       h1_line3: 'Rápidas.',
       description: 'ABELLOT.net diseña páginas web estáticas: rápidas, claras y sin complicaciones. Todo lo que necesitas, nada que sobre.',
       cta: 'Hablemos',
-<<<<<<< HEAD
-      footer_desc: 'Diseño web estático, sencillo y rápido',
-      marquee: 'Webs rápidas • Sin CMS • Código limpio • Accesibles • Hecho a mano • ABELLOT.net • Webs estáticas • Sencillas • Limpias • ABELLOT.net • '
-=======
       footer_desc: 'Diseño web estático, sencillo y rápido'
->>>>>>> 518a8f1 (eliminar marquesina, posar efecte groc i afegir memoria projecte)
     },
     en: {
       tagline: 'Small web studio, big results',
