@@ -9,6 +9,7 @@
   // Language selector
   var langButtons = document.querySelectorAll('.lang-btn');
   var currentLang = 'ca';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var translations = {
     ca: {
       tagline: 'Estudi web petit, resultats grans',
@@ -17,8 +18,12 @@
       h1_line3: 'Ràpides.',
       description: 'ABELLOT.net dissenya pàgines web estàtiques: ràpides, clares i sense complicacions. Tot el que necessites, res que sobri.',
       cta: 'Parlem-ne',
+<<<<<<< HEAD
       footer_desc: 'Disseny web estàtic, senzill i ràpid',
       marquee: 'Webs ràpides • Sense CMS • Codi net • Accessibles • Fetes a mà • ABELLOT.net • Webs estàtiques • Senzilles • Netes • ABELLOT.net • '
+=======
+      footer_desc: 'Disseny web estàtic, senzill i ràpid'
+>>>>>>> 518a8f1 (eliminar marquesina, posar efecte groc i afegir memoria projecte)
     },
     es: {
       tagline: 'Estudio web pequeño, resultados grandes',
@@ -27,8 +32,12 @@
       h1_line3: 'Rápidas.',
       description: 'ABELLOT.net diseña páginas web estáticas: rápidas, claras y sin complicaciones. Todo lo que necesitas, nada que sobre.',
       cta: 'Hablemos',
+<<<<<<< HEAD
       footer_desc: 'Diseño web estático, sencillo y rápido',
       marquee: 'Webs rápidas • Sin CMS • Código limpio • Accesibles • Hecho a mano • ABELLOT.net • Webs estáticas • Sencillas • Limpias • ABELLOT.net • '
+=======
+      footer_desc: 'Diseño web estático, sencillo y rápido'
+>>>>>>> 518a8f1 (eliminar marquesina, posar efecte groc i afegir memoria projecte)
     },
     en: {
       tagline: 'Small web studio, big results',
@@ -37,8 +46,7 @@
       h1_line3: 'Fast.',
       description: 'ABELLOT.net designing static websites: fast, clear, and uncomplicated. Everything you need, nothing extra.',
       cta: 'Talk to us',
-      footer_desc: 'Static web design, simple and fast',
-      marquee: 'Fast websites • No CMS • Clean code • Accessible • Handmade • ABELLOT.net • Static websites • Simple • Sweet • ABELLOT.net • '
+      footer_desc: 'Static web design, simple and fast'
     }
   };
 
@@ -80,11 +88,6 @@
     var footerDesc = document.querySelector('[data-i18n="footer-desc"]');
     if (footerDesc) footerDesc.textContent = t.footer_desc;
 
-    var marqueeTrack = document.querySelector('.marquee-track');
-    if (marqueeTrack) {
-      marqueeTrack.innerHTML = '<span>' + t.marquee + '</span><span>' + t.marquee + '</span>';
-    }
-
     // Update document lang
     document.documentElement.lang = lang;
   }
@@ -114,7 +117,6 @@
 
   // Parallax suau dels blobs del hero
   var parallaxEls = document.querySelectorAll('.parallax');
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (parallaxEls.length && !reduceMotion) {
     window.addEventListener('scroll', function () {
       var y = window.scrollY;

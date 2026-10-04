@@ -1,33 +1,32 @@
+# Projecte: web-abellot
+Web d'Abellot amb selector de llengua.
 
-## Estado actual del proyecto
+## Stack
+- HTML5, CSS3, JavaScript vanilla
 
-El proyecto consiste en una página web estática diseñada por ABELLOT.net. La página incluye funcionalidades como un selector de idiomas, efectos de revelación al desplazar, paralaje suave en elementos del hero y desplazamiento suave para anclas.
+## Estat actual
+- Landing d'una sola pàgina: header (selector CAT/ESP/ENG), hero, footer
+- Selector de llengua implementat a js/main.js (ca/es/en) amb data-i18n
+- Disseny responsive bàsic (mobile/tablet/desktop) + prefers-reduced-motion
+- Efectes: grain, blobs morphing + pulsació d'intensitat de color, grid amb highlight de cursor, reveal, parallax
 
-## Tecnologías y stack utilizados
+## Últims canvis
+- Marquesina eliminada del tot (HTML, CSS, JS i traduccions)
+- Nou efecte blob-pulse als blobs del fons: saturació i brillantor dels taronja/grocs puja i baixa cíclicament (5,5s blob-1, 7s blob-2 desfasats)
+- Eliminada declaració duplicada de `reduceMotion` a js/main.js
 
-- **HTML**: Estructura básica de la página.
-- **CSS**: Estilos utilizando Tailwind CSS.
-- **JavaScript**: Interactividad y funcionalidades dinámicas.
+## Problemes detectats
+- Contradicció: CONTEXT.md diu "CSS pur, sense frameworks" però index.html carrega Tailwind CDN (línia 12); el CSS propi només complementa
+- Selector d'idioma no persisteix (sense localStorage)
+- Bug: index.html:63 té classes duplicades lg:w-72 lg:w-96
 
-## Últimos cambios realizados
+## Pròxims passos
+- Millorar el disseny del header
+- Millorar moviment logotip abella
+- Resolver la contradicció Tailwind vs CSS pur
+- Persistir l'idioma amb localStorage
 
-- Implementación del selector de idiomas con tres opciones: catalán (ca), español (es) y inglés (en).
-- Adición de efectos de revelación al desplazar utilizando `IntersectionObserver`.
-- Implementación de paralaje suave en elementos del hero.
-- Adición de desplazamiento suave para anclas.
-- Actualización del año en el pie de página dinámicamente.
-
-## Próximos pasos pendientes
-
-- Optimización de rendimiento de la página.
-- Mejora de la accesibilidad.
-- Adición de más secciones y contenido a la página.
-- Implementación de pruebas unitarias para el código JavaScript.
-
-## Reglas importantes aprendidas sobre el código
-
-- Se utiliza Tailwind CSS para estilizar la página, lo que facilita la creación de diseños responsivos y personalizados.
-- El código JavaScript está encapsulado en una función inmediatamente invocada (IIFE) para evitar contaminación del espacio global.
-- Se utiliza `IntersectionObserver` para mejorar el rendimiento al aplicar efectos de revelación solo cuando los elementos son visibles en el viewport.
-- Se implementa el paralaje suave solo si el usuario no ha activado la opción de reducir el movimiento en sus preferencias de sistema.
-- Se utiliza `scrollIntoView` para el desplazamiento suave hacia anclas, mejorando la experiencia del usuario.
+## Decisions/Regles
+- Fer servir CSS pur, sense frameworks (pendent de resoldre: Tailwind CDN present)
+- Codi en anglès, comentaris en català
+- Respondre sempre en català (.cursorrules)
