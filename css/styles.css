@@ -290,28 +290,29 @@ header {
   -webkit-text-stroke: 2px var(--ink);
 }
 
-/* Bee image standalone - no circle frame */
-.bee-image-standalone {
+/* Bee slideshow - crossfade entre les il·lustracions */
+.bee-slideshow {
+  position: relative;
   width: 100%;
   max-width: 480px;
-  height: auto;
-  border-radius: 0;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 20px 40px -20px rgba(255, 107, 26, .4));
-  animation: bee-float 6s ease-in-out infinite;
+  aspect-ratio: 6 / 5;
+  margin-inline: auto;
 }
 
-@keyframes bee-float {
+.bee-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  filter: drop-shadow(0 20px 40px -20px rgba(255, 107, 26, .4));
+  will-change: opacity;
+}
 
-  0%,
-  100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-
-  50% {
-    transform: translateY(-24px) rotate(2deg);
-  }
+.bee-slide.active {
+  opacity: 1;
 }
 
 /* Mobile: allow scroll to see full page */
@@ -327,7 +328,7 @@ header {
     min-height: auto;
   }
 
-  .bee-image-standalone {
+  #inici .bee-slideshow {
     max-width: 300px;
     margin-top: 1.5rem;
   }
@@ -355,7 +356,6 @@ header {
     text-align: center;
   }
 
-  #inici .lg\\:w-72,
   #inici .lg\\:w-96 {
     width: 100%;
     max-width: 300px;
@@ -385,7 +385,7 @@ header {
 
 /* Tablet adjustments */
 @media (max-width: 1024px) {
-  .bee-image-standalone {
+  .bee-slideshow {
     max-width: 380px;
   }
 
@@ -442,9 +442,12 @@ footer a[href*="wa.me"] {
 @media (prefers-reduced-motion: reduce) {
 
   .grain,
-  .blob,
-  .bee-image-standalone {
+  .blob {
     animation: none !important;
+  }
+
+  .bee-slide {
+    transition: none;
   }
 
   .reveal {

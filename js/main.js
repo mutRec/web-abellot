@@ -89,6 +89,17 @@
     });
   });
 
+  // Slideshow de l'abella: crossfade automàtic entre les il·lustracions
+  var slides = document.querySelectorAll('.bee-slide');
+  if (slides.length > 1 && !reduceMotion) {
+    var slideIndex = 0;
+    setInterval(function () {
+      slides[slideIndex].classList.remove('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }, 3500);
+  }
+
   // Reveal on scroll (IntersectionObserver)
   var revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
