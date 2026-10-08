@@ -12,12 +12,12 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - `index.html` — única pàgina: header + hero (`#inici`) + footer (`#contacte`)
 - `css/styles.css` — estil propi i totes les animacions
 - `js/main.js` — script únic, una IIFE amb 'use strict'
-- `images/abella-01.png` … `abella-06.png` — il·lustracions de l'abella per al slideshow del hero; fons blanc netejat a transparent (es conserven els blancs de l'il·lustració, envoltats de contorn fosc)
+- `images/abella-01.png` … `abella-09.png` i `abellot-10.png` … `abellot-12.png` — il·lustracions per al slideshow del hero; fons netejat a transparent (es conserven els blancs interiors amb contorn fosc; `abellot-11/12` conserven l'ombra fosca)
 - `images/abellot.jpg` — imatge antiga (497x412), ja no s'usa
 
 ## Estat actual
 - **Header**: barra fixa superior amb barra de grain de fons i el selector d'idioma CAT/ESP/ENG alineat a la dreta
-- **Hero** (`#inici`, línia 39): fons decoratiu (`grain`, dos `blob`, `grid-bg`) + columna de text (tagline, h1 de 3 línies, descripció, CTA de WhatsApp) + columna dreta amb el slideshow de l'abella (`.bee-slideshow`, 6 il·lustracions en crossfade)
+- **Hero** (`#inici`, línia 39): fons decoratiu (`grain`, dos `blob`, `grid-bg`) + columna de text (tagline, h1 de 3 línies, descripció, CTA de WhatsApp) + columna dreta amb el slideshow de l'abella (`.bee-slideshow`, 8 il·lustracions en crossfade)
 - **Footer** (`#contacte`): logotip ABELLOT.net, contactes (telèfon, email, WhatsApp) i © any dinàmic
 - **Selector de llengua**: `ca` / `es` / `en` amb diccionari `translations` a `js/main.js` i atributs `data-i18n` al HTML (inclou `lang` del `<html>`)
 - **Tipografia**: h1 amb `leading-[0.95]`, `whitespace-nowrap` i una línia amb text contornat (`.text-outline`)
@@ -28,7 +28,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - `blob-1` i `blob-2` — bomboles de fons amb `blob-morph-1/2` (16s / 20s) i `blob-pulse` (saturació + brillantor, 5,5s i 7s desfasats)
 - `grid-bg` — quadrícula amb mascara radial i highlight que segueix el ratolí (`--mx` / `--my` des de JS)
 - `reveal` — entrada suau en scroll amb `IntersectionObserver` (fallback: els marca tots com a visibles)
-- `.bee-slideshow` / `.bee-slide` — crossfade automàtic entre les 6 il·lustracions de l'abella: canvi cada 3,5 s amb fade de 1,2 s, contenidor d'aspecte fix 6/5 i sense moviment propi (s'ha eliminat `bee-float`)
+- `.bee-slideshow` / `.bee-slide` — crossfade automàtic entre les il·lustracions de l'abella: canvi cada 3,5 s amb fade de 1,2 s, contenidor d'aspecte fix 6/5 i sense moviment propi (s'ha eliminat `bee-float`)
 - `parallax` als blobs segons `data-speed`
 - `btn-primary` — esborrat diagonal en hover
 - Bloques: desktop `#main-content` és `100vh` sense scroll; a ≤768px passa a `auto` i permet fer scroll
@@ -46,6 +46,8 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - La imatge única de l'abella (`abellot.jpg`) es reemplaça per un slideshow de 6 il·lustracions (`abella-01` … `abella-06`) amb crossfade automàtic cada 3,5 s; eliminada l'animació `bee-float`
 - Fons blanc dels 6 PNGs netejat a transparent (flood fill des de les vores amb tolerància + suavitzat d'alpha); verificat amb Edge headless (contenidor estable, cicle correcte i halo residual <30 px)
 - Element de la imatge reescrit: contenidor `.bee-slideshow` d'aspecte fix 6/5 (sense salt de layout entre imatges) i sense les classes duplicades `lg:w-72 lg:w-96`
+- `abella-07/08/09` afegides al repo i el slideshow reordenat (arrenca amb `abella-07`); `abellot-10/11/12` afegides al final (10 → 11 → 12)
+- `abellot-11/12` venien en JPG amb fons gris i ombra; passats a PNG amb el fons clar fet transparent i l'ombra fosca conservada
 
 ## Problemes detectats
 - Contradicció: aquest document diu "CSS pur, sense frameworks" però `index.html` carrega Tailwind CDN (línia 12); el CSS propi només complementa el layout
