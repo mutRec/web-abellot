@@ -51,12 +51,6 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - El JS aplica `transform` inline als `.parallax` (blobs), cosa que competeix amb el `transform` de les keyframes `blob-morph`
 - En viewports d'alçada curta (768–1023px), `#main-content` és `100vh` amb `overflow: hidden` i el contingut es retalla en lloc de fer scroll
 
-## Pròxims passos
-- Millorar el disseny del header
-- Millorar el moviment de l'abella (mantenir-ho dins la zona lliure del hero, sense tapar el text)
-- Resolver la contradicció Tailwind vs CSS pur
-- Persistir l'idioma amb `localStorage`
-
 ## Decisions/Regles
 - Fer servir CSS pur, sense frameworks (pendent de resoldre: Tailwind CDN present)
 - Codi en anglès, comentaris i text de la web en català
