@@ -73,7 +73,7 @@
     if (descEl) descEl.textContent = t.description;
 
     var ctaEl = document.querySelector('[data-i18n="cta"]');
-    if (ctaEl) ctaEl.innerHTML = t.cta + ' <span aria-hidden="true">→</span>';
+    if (ctaEl) ctaEl.innerHTML = t.cta;
 
     var footerDesc = document.querySelector('[data-i18n="footer-desc"]');
     if (footerDesc) footerDesc.textContent = t.footer_desc;
