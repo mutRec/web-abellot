@@ -294,7 +294,7 @@ header {
 .bee-slideshow {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 460px;
   aspect-ratio: 6 / 5;
   margin-inline: auto;
 }
@@ -302,17 +302,60 @@ header {
 .bee-slide {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: contain;
   opacity: 0;
   transition: opacity 1.2s ease;
-  filter: drop-shadow(0 20px 40px -20px rgba(255, 107, 26, .4));
+  filter: drop-shadow(0 24px 46px -22px rgba(255, 107, 26, .45));
   will-change: opacity;
 }
 
 .bee-slide.active {
   opacity: 1;
+}
+
+/* Base / ombra el·líptica sota la il·lustració */
+.bee-slideshow::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: 5%;
+  width: 56%;
+  height: 7%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%,
+      rgba(20, 18, 16, .32) 0%,
+      rgba(20, 18, 16, .18) 45%,
+      rgba(20, 18, 16, 0) 72%);
+  filter: blur(7px);
+}
+
+/* Desktop: més gran, amb amplada fixa al costat del text.
+   L'amplada es limita segons l'alçada del viewport perquè el hero
+   continuï cabent sense retallar-se (overflow: hidden). */
+@media (min-width: 1024px) {
+  .bee-slideshow {
+    width: min(560px, calc((100vh - 300px) * 1.2));
+    max-width: none;
+    flex-shrink: 0;
+  }
+}
+
+/* Tablet / escriptori estret: el contingut del hero pot superar el viewport,
+   així que la secció permet fer scroll i deixa d'escapçar-se */
+@media (min-width: 769px) and (max-width: 1023px) {
+  #inici {
+    overflow-y: auto;
+    align-items: flex-start;
+  }
+
+  #inici > .relative {
+    margin-block: auto;
+  }
 }
 
 /* Mobile: allow scroll to see full page */
@@ -329,7 +372,7 @@ header {
   }
 
   #inici .bee-slideshow {
-    max-width: 300px;
+    max-width: 360px;
     margin-top: 1.5rem;
   }
 
@@ -347,7 +390,7 @@ header {
   }
 
   /* Stack hero vertically on mobile: text first, then image */
-  #inici .flex-col.lg\\:flex-row {
+  #inici .flex-col.lg\:flex-row {
     flex-direction: column;
   }
 
@@ -356,14 +399,8 @@ header {
     text-align: center;
   }
 
-  #inici .lg\\:w-96 {
-    width: 100%;
-    max-width: 300px;
-    margin: 2rem auto 0;
-  }
-
   /* Footer stacked on mobile */
-  footer .flex-col.sm\\:flex-row {
+  footer .flex-col.sm\:flex-row {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
@@ -384,9 +421,9 @@ header {
 }
 
 /* Tablet adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .bee-slideshow {
-    max-width: 380px;
+    max-width: 460px;
   }
 
   header {

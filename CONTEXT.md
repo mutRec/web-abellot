@@ -48,12 +48,16 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - Element de la imatge reescrit: contenidor `.bee-slideshow` d'aspecte fix 6/5 (sense salt de layout entre imatges) i sense les classes duplicades `lg:w-72 lg:w-96`
 - `abella-07/08/09` afegides al repo i el slideshow reordenat (arrenca amb `abella-07`); `abellot-10/11/12` afegides al final (10 → 11 → 12)
 - `abellot-11/12` venien en JPG amb fons gris i ombra; passats a PNG amb el fons clar fet transparent i l'ombra fosca conservada
+- `abella-13.png` tenia fons blanc opac; netejat a transparent amb flood fill des de les vores (tolerància 28) + suavitzat d'alpha i verificat amb Edge headless (cantonades transparents, blancs interiors conservats)
+- Slideshow ampliat: desktop 560px (abans efectiu 384px per `lg:w-96`), tablet 460px i mòbil 360px; afegida una base/ombra el·líptica sota la il·lustració (`.bee-slideshow::after`); l'amplada de desktop es limita segons l'alçada del viewport (`min(560px, calc((100vh - 300px) * 1.2))`) per no retallar el hero
+- El slideshow ara arrenca amb `active` a la primera imatge (abans no es veia cap il·lustració fins al primer canvi, i amb `prefers-reduced-motion` no se'n veia cap)
+- Escriptoris estrets (769–1023px): `#inici` passa a `overflow-y: auto` amb `align-items: flex-start` i marge automàtic perquè el hero no quedi escapsat
 
 ## Problemes detectats
 - Contradicció: aquest document diu "CSS pur, sense frameworks" però `index.html` carrega Tailwind CDN (línia 12); el CSS propi només complementa el layout
 - El selector d'idioma no persisteix: no hi ha `localStorage`, sempre torna a català en recarregar
 - El JS aplica `transform` inline als `.parallax` (blobs), cosa que competeix amb el `transform` de les keyframes `blob-morph`
-- En viewports d'alçada curta (768–1023px), `#main-content` és `100vh` amb `overflow: hidden` i el contingut es retalla en lloc de fer scroll
+- En viewports d'alçada curta, el hero encara es pot retallar: a 769–1023px d'amplada ja no (la secció fa scroll), però a partir de 1024px d'amplada i amb poca alçada la columna de text pot excedir el `100vh` i `#main-content` (`overflow: hidden`) la retalla
 
 ## Decisions/Regles
 - Fer servir CSS pur, sense frameworks (pendent de resoldre: Tailwind CDN present)
