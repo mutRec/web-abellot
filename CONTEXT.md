@@ -21,7 +21,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - **Footer** (`#contacte`): logotip ABELLOT.net, contactes (telèfon, email, WhatsApp) i © any dinàmic
 - **Selector de llengua**: `ca` / `es` / `en` amb diccionari `translations` a `js/main.js` i atributs `data-i18n` al HTML (inclou `lang` del `<html>`)
 - **Tipografia**: h1 amb `leading-[0.95]`, `whitespace-nowrap` i una línia amb text contornat (`.text-outline`)
-- **Paleta**: cream `#FDF3E7` (fons), ink `#141210` (text), orange `#FF6B1A` (accent), yellow `#FFC93C` (highlight), honey `#E8A87C` (blob secundari)
+- **Paleta**: fons darkorange `#2A1107`, text cream `#FDF3E7`, ink `#2A1107` (text sobre fons clar), orange `#FF7F24` (accent), yellow `#FFC93C` (highlight), honey `#E8A87C` (blob secundari)
 
 ## Efectes i animacions
 - `grain` + `grain-shift` (8s, steps) — textura de gra sobre tot
@@ -39,6 +39,8 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - `prefers-reduced-motion`: desactiva `grain`, `blob`, el `reveal`, el `transition` i el cicle de l'abella i el `scroll-behavior` (es mostra només la primera il·lustració)
 
 ## Últims canvis
+- Fons fosc (`bg-darkorange` #2A1107): la descripció del hero encara era `text-ink/70` (el mateix color que el fons) i no es veia; passa a `text-cream/80`. La tagline del hero passa de `text-orange` a `text-ink` perquè sobre la píndola `bg-cream/60` l'orange quedava il·legible
+- Mòbil (≤768px): es desactiva el `whitespace-nowrap` del h1 i es redueix la tagline (mida i tracking) perquè no desbordin el viewport i retallin la descripció per la dreta
 - Resolts els marcadors de merge de Git que hi havia commitejats a `js/main.js` (el fitxer no era JavaScript vàlid i el selector d'idioma no funcionava); es manté `footer_desc` i es descarta la clau `marquee`, que ja no existeix al HTML
 - Marquesina eliminada del tot (HTML, CSS, JS i traduccions)
 - Nou efecte `blob-pulse` als blobs del fons: saturació i brillantor pujan i baixen cíclicament
