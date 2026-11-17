@@ -246,7 +246,7 @@ header {
   background: var(--ink);
   color: var(--cream);
   padding: 1rem 2rem;
-  border-radius: 9999px;
+  border-radius: 50px;
   font-weight: 600;
   transition: background .3s ease, box-shadow .3s ease;
   position: relative;
