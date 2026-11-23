@@ -25,7 +25,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 
 ## Efectes i animacions
 - `grain` + `grain-shift` (8s, steps) — textura de gra sobre tot
-- `blob-1` i `blob-2` — bomboles de fons amb `blob-morph-1/2` (16s / 20s) i `blob-pulse` (saturació + brillantor, 5,5s i 7s desfasats)
+- `blob-1` i `blob-2` — bomboles de fons fixes: gradient radial fix (groc-taronja) sense cap animació cíclica
 - `grid-bg` — quadrícula amb mascara radial i highlight que segueix el ratolí (`--mx` / `--my` des de JS)
 - `reveal` — entrada suau en scroll amb `IntersectionObserver` (fallback: els marca tots com a visibles)
 - `.bee-slideshow` / `.bee-slide` — crossfade automàtic entre les il·lustracions de l'abella: canvi cada 3,5 s amb fade de 1,2 s, contenidor d'aspecte fix 6/5 i sense moviment propi (s'ha eliminat `bee-float`)
@@ -36,14 +36,15 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 ## Responsive
 - Mobile (≤768px): columna, text centrat, footer apilat, header i botons més grans
 - Tablet (≤1024px): slideshow de l'abella (màx. 380px) i header ajustats; a mobile (≤768px) màx. 300px
-- `prefers-reduced-motion`: desactiva `grain`, `blob`, el `reveal`, el `transition` i el cicle de l'abella i el `scroll-behavior` (es mostra només la primera il·lustració)
+- `prefers-reduced-motion`: desactiva `grain`, el `reveal`, el `transition` i el cicle de l'abella i el `scroll-behavior` (es mostra només la primera il·lustració)
 
 ## Últims canvis
 - Fons fosc (`bg-darkorange` #2A1107): la descripció del hero encara era `text-ink/70` (el mateix color que el fons) i no es veia; passa a `text-cream/80`. La tagline del hero passa de `text-orange` a `text-ink` perquè sobre la píndola `bg-cream/60` l'orange quedava il·legible
 - Mòbil (≤768px): es desactiva el `whitespace-nowrap` del h1 i es redueix la tagline (mida i tracking) perquè no desbordin el viewport i retallin la descripció per la dreta
 - Resolts els marcadors de merge de Git que hi havia commitejats a `js/main.js` (el fitxer no era JavaScript vàlid i el selector d'idioma no funcionava); es manté `footer_desc` i es descarta la clau `marquee`, que ja no existeix al HTML
 - Marquesina eliminada del tot (HTML, CSS, JS i traduccions)
-- Nou efecte `blob-pulse` als blobs del fons: saturació i brillantor pujan i baixen cíclicament
+- Nou efecte `blob-pulse` als blobs del fons: saturació i brillantor pujan i baixen cíclicament (**després eliminat**: els blobs ara són fixes)
+- Eliminat el bucle d'animació dels blobs del hero (`blob-morph-1/2` i `blob-pulse`, juntament amb els seus `@keyframes`): els blobs queden estàtics amb el seu gradient radial de colors, sense cap efecte cíclic
 - Eliminada la declaració duplicada de `reduceMotion` a `js/main.js`
 - La imatge única de l'abella (`abellot.jpg`) es reemplaça per un slideshow de 6 il·lustracions (`abella-01` … `abella-06`) amb crossfade automàtic cada 3,5 s; eliminada l'animació `bee-float`
 - Fons blanc dels 6 PNGs netejat a transparent (flood fill des de les vores amb tolerància + suavitzat d'alpha); verificat amb Edge headless (contenidor estable, cicle correcte i halo residual <30 px)
@@ -58,7 +59,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 ## Problemes detectats
 - Contradicció: aquest document diu "CSS pur, sense frameworks" però `index.html` carrega Tailwind CDN (línia 12); el CSS propi només complementa el layout
 - El selector d'idioma no persisteix: no hi ha `localStorage`, sempre torna a català en recarregar
-- El JS aplica `transform` inline als `.parallax` (blobs), cosa que competeix amb el `transform` de les keyframes `blob-morph`
+- ~~El JS aplica `transform` inline als `.parallax` (blobs), cosa que competeix amb el `transform` de les keyframes `blob-morph`~~ (resolt: s'han eliminat les keyframes dels blobs)
 - En viewports d'alçada curta, el hero encara es pot retallar: a 769–1023px d'amplada ja no (la secció fa scroll), però a partir de 1024px d'amplada i amb poca alçada la columna de text pot excedir el `100vh` i `#main-content` (`overflow: hidden`) la retalla
 
 ## Decisions/Regles
