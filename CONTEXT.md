@@ -16,16 +16,15 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - `images/abellot.jpg` — imatge antiga (497x412), ja no s'usa
 
 ## Estat actual
-- **Header**: barra fixa superior amb barra de grain de fons i el selector d'idioma CAT/ESP/ENG alineat a la dreta
-- **Hero** (`#inici`, línia 39): fons decoratiu (`grain`, dos `blob`, `grid-bg`) + columna de text (tagline, h1 de 3 línies, descripció, CTA de WhatsApp) + columna dreta amb el slideshow de l'abella (`.bee-slideshow`, 8 il·lustracions en crossfade)
+- **Header**: barra fixa superior amb el selector d'idioma CAT/ESP/ENG alineat a la dreta
+- **Hero** (`#inici`, línia 39): fons decoratiu fix (dos `blob` amb gradient radial i `grid-bg`) + columna de text (tagline, h1 de 3 línies, descripció, CTA de WhatsApp) + columna dreta amb el slideshow de l'abella (`.bee-slideshow`, 8 il·lustracions en crossfade)
 - **Footer** (`#contacte`): logotip ABELLOT.net, contactes (telèfon, email, WhatsApp) i © any dinàmic
 - **Selector de llengua**: `ca` / `es` / `en` amb diccionari `translations` a `js/main.js` i atributs `data-i18n` al HTML (inclou `lang` del `<html>`)
 - **Tipografia**: h1 amb `leading-[0.95]`, `whitespace-nowrap` i una línia amb text contornat (`.text-outline`)
 - **Paleta**: fons darkorange `#2A1107`, text cream `#FDF3E7`, ink `#2A1107` (text sobre fons clar), orange `#FF7F24` (accent), yellow `#FFC93C` (highlight), honey `#E8A87C` (blob secundari)
 
 ## Efectes i animacions
-- `grain` + `grain-shift` (8s, steps) — textura de gra sobre tot
-- `blob-1` i `blob-2` — bomboles de fons fixes: gradient radial fix (groc-taronja) sense cap animació cíclica
+- Cap element del fons fa bucle: sense `grain`, sense `blob-morph` ni `blob-pulse`; els `blob-1`/`blob-2` són fixes amb gradient radial i `grid-bg` és una quadrícula estàtica
 - `grid-bg` — quadrícula amb mascara radial i highlight que segueix el ratolí (`--mx` / `--my` des de JS)
 - `reveal` — entrada suau en scroll amb `IntersectionObserver` (fallback: els marca tots com a visibles)
 - `.bee-slideshow` / `.bee-slide` — crossfade automàtic entre les il·lustracions de l'abella: canvi cada 3,5 s amb fade de 1,2 s, contenidor d'aspecte fix 6/5 i sense moviment propi (s'ha eliminat `bee-float`)
@@ -36,7 +35,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 ## Responsive
 - Mobile (≤768px): columna, text centrat, footer apilat, header i botons més grans
 - Tablet (≤1024px): slideshow de l'abella (màx. 380px) i header ajustats; a mobile (≤768px) màx. 300px
-- `prefers-reduced-motion`: desactiva `grain`, el `reveal`, el `transition` i el cicle de l'abella i el `scroll-behavior` (es mostra només la primera il·lustració)
+- `prefers-reduced-motion`: desactiva el `reveal`, el `transition` i el cicle de l'abella i el `scroll-behavior` (es mostra només la primera il·lustració)
 
 ## Últims canvis
 - Fons fosc (`bg-darkorange` #2A1107): la descripció del hero encara era `text-ink/70` (el mateix color que el fons) i no es veia; passa a `text-cream/80`. La tagline del hero passa de `text-orange` a `text-ink` perquè sobre la píndola `bg-cream/60` l'orange quedava il·legible
@@ -45,6 +44,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - Marquesina eliminada del tot (HTML, CSS, JS i traduccions)
 - Nou efecte `blob-pulse` als blobs del fons: saturació i brillantor pujan i baixen cíclicament (**després eliminat**: els blobs ara són fixes)
 - Eliminat el bucle d'animació dels blobs del hero (`blob-morph-1/2` i `blob-pulse`, juntament amb els seus `@keyframes`): els blobs queden estàtics amb el seu gradient radial de colors, sense cap efecte cíclic
+- Eliminada del tot la capa de grain (element `.grain`, regla CSS i `@keyframes grain-shift`) i el `animate-pulse` de la tagline: ja no queda cap animació cíclica al fons, tot el fons és fix
 - Eliminada la declaració duplicada de `reduceMotion` a `js/main.js`
 - La imatge única de l'abella (`abellot.jpg`) es reemplaça per un slideshow de 6 il·lustracions (`abella-01` … `abella-06`) amb crossfade automàtic cada 3,5 s; eliminada l'animació `bee-float`
 - Fons blanc dels 6 PNGs netejat a transparent (flood fill des de les vores amb tolerància + suavitzat d'alpha); verificat amb Edge headless (contenidor estable, cicle correcte i halo residual <30 px)
