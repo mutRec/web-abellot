@@ -3,13 +3,16 @@
   --honey: #E8A87C;
   --cream: #FDF3E7;
   --orange: #FF7F24;
+  --orange-deep: #9A3412;
   --yellow: #FFC93C;
   --ink: #2A1107;
   --darkorange: #2A1107;
+  --bg: #F79A5A;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
 }
 
 body {
@@ -17,6 +20,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg);
 }
 
 /* Desktop: fixed viewport, no scroll */
@@ -86,8 +90,8 @@ header {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(253, 243, 231, .04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(253, 243, 231, .04) 1px, transparent 1px);
+    linear-gradient(rgba(42, 17, 7, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 17, 7, .07) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 75%);
@@ -100,8 +104,8 @@ header {
   inset: 0;
   pointer-events: none;
   background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
-      rgba(255, 201, 60, .18) 0%,
-      rgba(255, 127, 36, .08) 25%,
+      rgba(255, 255, 255, .45) 0%,
+      rgba(255, 255, 255, .18) 25%,
       transparent 50%);
   opacity: 0;
   transition: opacity 0.3s ease;
