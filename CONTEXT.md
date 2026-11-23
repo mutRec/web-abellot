@@ -21,7 +21,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - **Footer** (`#contacte`): logotip ABELLOT.net, contactes (telèfon, email, WhatsApp) i © any dinàmic
 - **Selector de llengua**: `ca` / `es` / `en` amb diccionari `translations` a `js/main.js` i atributs `data-i18n` al HTML (inclou `lang` del `<html>`)
 - **Tipografia**: h1 amb `leading-[0.95]`, `whitespace-nowrap` i una línia amb text contornat (`.text-outline`)
-- **Paleta**: fons darkorange `#2A1107`, text cream `#FDF3E7`, ink `#2A1107` (text sobre fons clar), orange `#FF7F24` (accent), yellow `#FFC93C` (highlight), honey `#E8A87C` (blob secundari)
+- **Paleta**: fons `#F79A5A` (taronja claret, `--bg`), text ink `#2A1107` (i cream `#FDF3E7` sobre el footer fosc), orange `#FF7F24` (accent), orange-deep `#7C2D12` (accent del h1 sobre el fons clar), yellow `#FFC93C` (highlight), honey `#E8A87C` (blob secundari)
 
 ## Efectes i animacions
 - Cap element del fons fa bucle: sense `grain`, sense `blob-morph` ni `blob-pulse`; els `blob-1`/`blob-2` són fixes amb gradient radial i `grid-bg` és una quadrícula estàtica
@@ -45,6 +45,7 @@ Web d'Abellot (ABELLOT.net) amb selector de llengua. Landing d'una sola pàgina,
 - Nou efecte `blob-pulse` als blobs del fons: saturació i brillantor pujan i baixen cíclicament (**després eliminat**: els blobs ara són fixes)
 - Eliminat el bucle d'animació dels blobs del hero (`blob-morph-1/2` i `blob-pulse`, juntament amb els seus `@keyframes`): els blobs queden estàtics amb el seu gradient radial de colors, sense cap efecte cíclic
 - Eliminada del tot la capa de grain (element `.grain`, regla CSS i `@keyframes grain-shift`) i el `animate-pulse` de la tagline: ja no queda cap animació cíclica al fons, tot el fons és fix
+- Fons canviat de `#2A1107` (gairebé negre) a taronja claret `#F79A5A` (`--bg`, a `html` i `body`, i `theme-color` al meta). Perquè el text segueixi llegint-se bé: text del hero passa de `cream` a `ink` (`#2A1107`, 8,2:1), descripció `text-ink/80` (5,6:1), contorn del h1 (`--cream` → `--ink`), accent "Ràpides." a `--orange-deep` `#7C2D12` (4,3:1) en lloc de `--orange`, header de fosc a crema translúcid amb hovers en clau fosca, graella `grid-bg` i highlight del punter en clau fosca (abans cream), i ombra al `btn-primary` perquè se separi del nou fons
 - Eliminada la declaració duplicada de `reduceMotion` a `js/main.js`
 - La imatge única de l'abella (`abellot.jpg`) es reemplaça per un slideshow de 6 il·lustracions (`abella-01` … `abella-06`) amb crossfade automàtic cada 3,5 s; eliminada l'animació `bee-float`
 - Fons blanc dels 6 PNGs netejat a transparent (flood fill des de les vores amb tolerància + suavitzat d'alpha); verificat amb Edge headless (contenidor estable, cicle correcte i halo residual <30 px)

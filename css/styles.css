@@ -3,7 +3,7 @@
   --honey: #E8A87C;
   --cream: #FDF3E7;
   --orange: #FF7F24;
-  --orange-deep: #9A3412;
+  --orange-deep: #7C2D12;
   --yellow: #FFC93C;
   --ink: #2A1107;
   --darkorange: #2A1107;
@@ -36,10 +36,10 @@ body {
 
 /* Language selector */
 header {
-  background: rgba(42, 17, 7, 0.85);
+  background: rgba(253, 243, 231, 0.78);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(253, 243, 231, 0.1);
+  border-bottom: 1px solid rgba(42, 17, 7, 0.12);
 }
 
 .lang-btn {
@@ -47,12 +47,12 @@ header {
 }
 
 .lang-btn.active {
-  box-shadow: 0 4px 16px -4px rgba(255, 127, 36, .4);
+  box-shadow: 0 4px 16px -4px rgba(42, 17, 7, .35);
 }
 
 .lang-btn:not(.active):hover {
-  background: rgba(253, 243, 231, .2);
-  border-color: rgba(253, 243, 231, .4);
+  background: rgba(42, 17, 7, .08);
+  border-color: rgba(42, 17, 7, .3);
 }
 
 /* Hero blobs */
@@ -125,6 +125,7 @@ header {
   padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 600;
+  box-shadow: 0 12px 26px -14px rgba(42, 17, 7, .55);
   transition: background .3s ease, box-shadow .3s ease;
   position: relative;
   overflow: hidden;
@@ -161,10 +162,14 @@ header {
   transform: translateY(0);
 }
 
+.text-orange-deep {
+  color: var(--orange-deep);
+}
+
 /* Text outline (hero) */
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 2px var(--cream);
+  -webkit-text-stroke: 2px var(--ink);
 }
 
 /* Bee slideshow - crossfade entre les il·lustracions */
